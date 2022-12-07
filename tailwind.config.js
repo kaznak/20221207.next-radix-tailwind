@@ -7,5 +7,10 @@ module.exports = {
   theme: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    require("tailwindcss-radix")({
+      // Default: `radix`
+      variantPrefix: "rdx",
+    }),
+  ],
 }
