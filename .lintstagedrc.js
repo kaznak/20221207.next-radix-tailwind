@@ -6,7 +6,9 @@ const buildEslintCommand = (filenames) =>
     .join(' --file ')}`
 
 const prettierCommand = (filenames) =>
-  `prettier -w ${filenames.map((f) => path.relative(process.cwd(), f))}`
+  `prettier --write --ignore-unknown ${filenames.map((f) =>
+    path.relative(process.cwd(), f)
+  )}`
 
 module.exports = {
   '*': [prettierCommand],
